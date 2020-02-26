@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Dependencies -->
+
+        <!-- Bootstrap 4 -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <!-- HandleBars -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <link href="./index.css" rel="stylesheet">       
+        
+        <script src="./index.js"></script>
+
+        <link rel="shortcut icon" href="">
+
+        <title>Sample Table</title>
+    </head>
+
+    <body>
+        <!-- script for handlebars.js part -->
+        <script id="tableContent" type="text/x-handlebars-template">  
+            {{#each tableBody}}
+            <tr>
+                <td style="font-weight: bold;">{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{url}}</td>
+            </tr>
+            {{/each}}
+        </script>
+
+
+        <div class="container-fluid">
+            <h1>Sample Table</h1>
+
+            <p>
+                You should be able to recreate this table. By default, the content of the table should be empty.
+                When you click the button, it should fetch data located at https://aimtell.com/files/sites.json using AJAX and
+                insert it into the page using HANDLEBARS.
+            </p>
+
+            <button type="button" class="btn btn-primary" onclick="loadData()">Load Data</button>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>url</th>
+                  </tr>
+                </thead>
+                <tbody>              
+                </tbody>
+            </table>
+            
+        </div>
+
+        
+    </body>
+</html>
